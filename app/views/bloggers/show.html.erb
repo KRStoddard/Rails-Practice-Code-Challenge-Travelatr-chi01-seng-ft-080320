@@ -1,0 +1,5 @@
+<h1> Blogger Profile Page </h1>
+
+<%= "Total number of likes: #{@blogger.posts.sum {|post| post.likes}}" %>
+
+<p> Featured Post: <%= link_to "#{@blogger.most_popular_post.title}", post_path(@blogger.most_popular_post.id) %>

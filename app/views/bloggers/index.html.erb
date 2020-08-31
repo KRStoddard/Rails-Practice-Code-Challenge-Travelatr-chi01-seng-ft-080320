@@ -1,0 +1,5 @@
+<h1> Index Page </h1>
+
+<% @bloggers.each do |blogger| %>
+<p> <%= link_to "#{blogger.name}", blogger_path(blogger) %> </p>
+<% end %>
