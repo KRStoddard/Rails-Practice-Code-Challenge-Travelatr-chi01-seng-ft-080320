@@ -1,0 +1,13 @@
+<h1><%= @destination.name %></h1>
+
+<p><%= "Located in: #{@destination.country}" %></p>
+
+<h3>Most recent posts</h3>
+<% @destination.posts.reverse[0,4].each do |post|%>
+<p><%= link_to "#{post.title}", post_path(post) %></p>
+<% end %>
+<h3>Featured Post</h3>
+<p><%= link_to "#{@destination.most_liked_post.title}", post_path(@destination.most_liked_post) %></p>
+<br>
+<h3>Average Age of Blogger</h3>
+<p><%= @destination.average_age.to_i %></p>

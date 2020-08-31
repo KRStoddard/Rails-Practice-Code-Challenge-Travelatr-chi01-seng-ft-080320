@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+<h5>By: <%= link_to "#{@post.blogger.name}", blogger_path(@post.blogger) %></h5>
+<br>
+<br>
+<h3><%= link_to "#{@post.destination.name}", destination_path(@post.destination) %></h3>
+<p><%= @post.content %></p>
+<br>
+<p style="color: gray"><%= "Likes: #{@post.likes}" %></p>
+<br>
+
+<%= button_to "Like Post", liked_post_path(@post), {method: :patch} %>

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 resources :bloggers
 resources :posts
 resources :destinations
-
+patch 'posts/:id/likes', to: 'posts#likes', as: 'liked_post'
 end
